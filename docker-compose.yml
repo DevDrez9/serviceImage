@@ -1,0 +1,11 @@
+services:
+  image-optimizer:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./uploads:/usr/src/app/uploads
+    environment:
+      - UPLOAD_SECRET=mi_secreto_super_seguro
+      - BASE_URL=http://localhost:3000
+    restart: unless-stopped
